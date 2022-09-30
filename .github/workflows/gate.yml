@@ -20,9 +20,9 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build src --configuration Release --no-restore
+      run: dotnet build src\BitFaster.Caching.DependencyInjection.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test src --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
+      run: dotnet test src\BitFaster.Caching.DependencyInjection.sln --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
     - name: Publish coverage report to coveralls.io   
       uses: coverallsapp/github-action@master   
       with:
