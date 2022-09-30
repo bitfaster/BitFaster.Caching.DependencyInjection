@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitFaster.Caching.DependencyInjection", "BitFaster.Caching.DependencyInjection\BitFaster.Caching.DependencyInjection.csproj", "{337F4327-E35A-40F6-8A6C-7FA47A962D49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{337F4327-E35A-40F6-8A6C-7FA47A962D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337F4327-E35A-40F6-8A6C-7FA47A962D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337F4327-E35A-40F6-8A6C-7FA47A962D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337F4327-E35A-40F6-8A6C-7FA47A962D49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {444CBAA7-C7F1-4332-9162-9D98701D3883}
+	EndGlobalSection
+EndGlobal
