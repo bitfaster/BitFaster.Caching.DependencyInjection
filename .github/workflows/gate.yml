@@ -33,10 +33,10 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} 
         path-to-lcov: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/coverage.info 
-    - name: unit test report
+    - name: Generate unit test report
       uses: zyborg/dotnet-tests-report@v1
       with:
-          test_results_path: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/
+          test_results_path: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/testResultsXml.trx
           report_name: unit_tests
           report_title: Unit Tests
           github_token: ${{ secrets.GITHUB_TOKEN }}
