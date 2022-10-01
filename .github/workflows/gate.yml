@@ -37,9 +37,9 @@ jobs:
         path-to-lcov: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/coverage.info 
     - name: Generate test report
       uses: phoenix-actions/test-reporting@v8
-      id: test-report
+      id: unit-test-report
       if: success() || failure() 
       with:
-        name: tests
+        name: test report
         path: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/results.trx
         reporter: dotnet-trx 
