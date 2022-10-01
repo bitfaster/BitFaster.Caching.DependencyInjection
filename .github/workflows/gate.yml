@@ -1,9 +1,11 @@
-name: Build and Test (windows-latest)
+name: CI
 
 on:
   push:
+    paths-ignore: [ '**.md' ]
     branches: [ main ]
   pull_request:
+    paths-ignore: [ '**.md' ]
     branches: [ main ]
 
 jobs:
@@ -33,11 +35,11 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} 
         path-to-lcov: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/coverage.info 
-    - name: Test Reporting
+    - name: Generate test report
       uses: phoenix-actions/test-reporting@v8
       id: test-report
       if: success() || failure() 
       with:
-        name: test-results
+        name: tests
         path: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/results.trx
         reporter: dotnet-trx 
