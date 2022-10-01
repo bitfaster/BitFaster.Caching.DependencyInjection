@@ -1,6 +1,4 @@
 using BitFaster.Caching.Lru;
-using FluentAssertions;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace BitFaster.Caching.DependencyInjection.UnitTests
 {
