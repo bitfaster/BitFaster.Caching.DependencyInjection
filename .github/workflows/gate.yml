@@ -43,3 +43,4 @@ jobs:
         name: test report
         path: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/results.trx
         reporter: dotnet-trx 
+        only-summary: 'true'
