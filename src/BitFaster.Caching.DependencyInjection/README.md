@@ -1,5 +1,4 @@
-# BitFaster.Caching.DependencyInjection
-Extension methods for setting up [caches](https://github.com/bitfaster/BitFaster.Caching/wiki/Caches) using [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/).
+﻿Extension methods for setting up [caches](https://github.com/bitfaster/BitFaster.Caching/wiki/Caches) using [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/).
 
 # ConcurrentLru
 
