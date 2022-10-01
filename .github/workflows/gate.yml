@@ -36,6 +36,8 @@ jobs:
     - name: Test Reporting
       uses: phoenix-actions/test-reporting@v8
       id: test-report
+      if: success() || failure() 
       with:
         name: test-results
         path: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/results.trx
+        reporter: dotnet-trx 
