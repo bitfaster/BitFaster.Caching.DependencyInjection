@@ -33,3 +33,9 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} 
         path-to-lcov: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/coverage.info 
+    - name: Parse Trx files
+        uses: NasAmin/trx-parser@v0.1
+        id: trx-parser
+        with:
+          TRX_PATH: ${{ github.workspace }}/TestResults #This should be the path to your TRX files
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}       
