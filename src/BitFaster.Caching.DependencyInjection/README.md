@@ -5,13 +5,13 @@
 To use with an `IServiceCollection` instance at startup:
 
 ```cs
-services.AddLru<int, int>(builder =>
+services.AddLru<int, string>(builder =>
     builder
         .WithCapacity(666)
         .Build());
 ```
 
-The builder delegate is used to configure the registered cache, see the [wiki](https://github.com/bitfaster/BitFaster.Caching/wiki/ConcurrentLru-Quickstart#builder-api) for more details about the builder API.
+This adds a `ConcurrentLru` where the key is an integer and the cached value is a string. The builder delegate is used to configure the registered cache with a capacity of 666, see the [wiki](https://github.com/bitfaster/BitFaster.Caching/wiki/ConcurrentLru-Quickstart#builder-api) for more details about the builder API and configurable cache features.
 
 There is an extension method for each [cache interface](https://github.com/bitfaster/BitFaster.Caching/wiki/Caches):
 
@@ -28,13 +28,13 @@ There is an extension method for each [cache interface](https://github.com/bitfa
 To use with an `IServiceCollection` instance at startup:
 
 ```cs
-services.AddLfu<int, int>(builder =>
+services.AddLfu<int, string>(builder =>
     builder
         .WithCapacity(666)
         .Build());
 ```
 
-The builder delegate is used to configure the registered cache, see the [wiki](https://github.com/bitfaster/BitFaster.Caching/wiki/ConcurrentLfu-Quickstart#builder-api) for more details about the builder API.
+This adds a `ConcurrentLfu` where the key is an integer and the cached value is a string. The builder delegate is used to configure the registered cache with a capacity of 666, see the [wiki](https://github.com/bitfaster/BitFaster.Caching/wiki/ConcurrentLfu-Quickstart#builder-api) for more details about the builder API and configurable cache features.
 
 There is an extension method for each [cache interface](https://github.com/bitfaster/BitFaster.Caching/wiki/Caches):
 
