@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build src --configuration Release --no-restore
     - name: Test
-      run: dotnet test src --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
+      run: dotnet test src --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov --logger "trx;LogFileName=results.trx"
     - name: Publish NuGet artifacts
       uses: actions/upload-artifact@v3
       with:
@@ -33,3 +33,9 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} 
         path-to-lcov: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/coverage.info 
+    - name: Test Reporting
+      uses: phoenix-actions/test-reporting@v8
+      id: test-report
+      with:
+        name: test-results
+        path: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/results.trx
