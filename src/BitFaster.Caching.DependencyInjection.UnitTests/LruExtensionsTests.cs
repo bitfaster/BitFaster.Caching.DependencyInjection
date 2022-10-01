@@ -16,8 +16,6 @@ namespace BitFaster.Caching.DependencyInjection.UnitTests
 
             services.Count.Should().Be(1);
             services[0].IsSingleton<FastConcurrentLru<int, int>, ICache<int, int>>();
-
-            throw new Exception("failed");
         }
 
         [Fact]
