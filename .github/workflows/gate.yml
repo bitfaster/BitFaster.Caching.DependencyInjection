@@ -1,4 +1,4 @@
-name: Build and Test (windows-latest)
+name: Build and Test
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build src --configuration Release --no-restore
     - name: Test
-      run: dotnet test src --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov --logger "trx;LogFileName=testResultsXml.trx"
+      run: dotnet test src --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov --logger "trx;LogFileName=results.trx"
     - name: Publish NuGet artifacts
       uses: actions/upload-artifact@v3
       with:
@@ -34,9 +34,9 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }} 
         path-to-lcov: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/coverage.info 
     - name: Generate unit test report
-      uses: zyborg/dotnet-tests-report@v1
+      uses: zyborg/dotnet-tests-report@v1.4.4
       with:
-          test_results_path: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/testResultsXml.trx
+          test_results_path: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/results.trx
           report_name: unit_tests
           report_title: Unit Tests
           github_token: ${{ secrets.GITHUB_TOKEN }}
