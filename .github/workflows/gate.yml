@@ -1,4 +1,4 @@
-name: Build and Test (windows-latest)
+name: Build and Test
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build src --configuration Release --no-restore
     - name: Test
-      run: dotnet test src --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
+      run: dotnet test src --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov --logger "trx;LogFileName=testResultsXml.trx"
     - name: Publish NuGet artifacts
       uses: actions/upload-artifact@v3
       with:
