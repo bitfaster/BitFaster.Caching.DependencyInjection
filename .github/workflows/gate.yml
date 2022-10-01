@@ -23,6 +23,11 @@ jobs:
       run: dotnet build src --configuration Release --no-restore
     - name: Test
       run: dotnet test src --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
+    - name: Publish NuGet artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: NuGet package
+        path: src/BitFaster.Caching.DependencyInjection/bin/Release/
     - name: Publish coverage report to coveralls.io   
       uses: coverallsapp/github-action@master   
       with:
