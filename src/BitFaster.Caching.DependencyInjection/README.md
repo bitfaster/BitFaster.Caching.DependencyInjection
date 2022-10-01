@@ -17,10 +17,10 @@ There is an extension method for each [cache interface](https://github.com/bitfa
 
 | Extension | Result | 
 |-----------|--------|
-| `AddLru` | Registers `ConcurrentLru<int, int>` as a singleton `ICache<int, int>` |
-| `AddAsyncLru` | Registers `ConcurrentLru<int, int>` as a singleton `IAsyncCache<int, int>` |
-| `AddScopedLru` | Registers `ConcurrentLru<int, Disposable>` as a singleton `IScopedCache<int, Disposable>` |
-| `AddScopedAsyncLru` | Registers `ConcurrentLru<int, Disposable>` as a singleton `IScopedAsyncCache<int, Disposable>` |
+| `AddLru<TKey, TValue>` | Registers `ConcurrentLru<TKey, TValue>` as a singleton `ICache<TKey, TValue>` |
+| `AddAsyncLru<TKey, TValue>` | Registers `ConcurrentLru<TKey, TValue>` as a singleton `IAsyncCache<TKey, TValue>` |
+| `AddScopedLru<TKey, TValue>` | Registers `ConcurrentLru<TKey, TValue>` as a singleton `IScopedCache<TKey, TValue>` |
+| `AddScopedAsyncLru<TKey, TValue>` | Registers `ConcurrentLru<TKey, TValue>` as a singleton `IScopedAsyncCache<TKey, TValue>` |
 
 
 # ConcurrentLfu
@@ -40,7 +40,7 @@ There is an extension method for each [cache interface](https://github.com/bitfa
 
 | Extension | Result | 
 |-----------|--------|
-| `AddLfu` | Registers `ConcurrentLfu<int, int>` as a singleton `ICache<int, int>` |
-| `AddAsyncLfu` | Registers `ConcurrentLfu<int, int>` as a singleton `IAsyncCache<int, int>` |
-| `AddScopedLfu` | Registers `ConcurrentLfu<int, Disposable>` as a singleton `IScopedCache<int, Disposable>` |
-| `AddScopedAsyncLfu` | Registers `ConcurrentLfu<int, Disposable>` as a singleton `IScopedAsyncCache<int, Disposable>` |
+| `AddLfu<TKey, TValue>` | Registers `ConcurrentLfu<TKey, TValue>` as a singleton `ICache<TKey, TValue>` |
+| `AddAsyncLfu<TKey, TValue>` | Registers `ConcurrentLfu<TKey, TValue>` as a singleton `IAsyncCache<TKey, TValue>` |
+| `AddScopedLfu<TKey, TValue>` | Registers `ConcurrentLfu<TKey, TValue>` as a singleton `IScopedCache<TKey, TValue>` |
+| `AddScopedAsyncLfu<TKey, TValue>` | Registers `ConcurrentLfu<TKey, TValue>` as a singleton `IScopedAsyncCache<TKey, TValue>` |
