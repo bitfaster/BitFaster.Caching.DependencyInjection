@@ -40,7 +40,7 @@ jobs:
       id: unit-test-report
       if: success() || failure() 
       with:
-        name: test report
+        name: test results
         path: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/results.trx
         reporter: dotnet-trx 
         only-summary: 'true'
