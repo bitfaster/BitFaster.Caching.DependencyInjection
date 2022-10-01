@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System.Collections;
+﻿using System.Collections;
 
 namespace BitFaster.Caching.DependencyInjection.UnitTests
 {
