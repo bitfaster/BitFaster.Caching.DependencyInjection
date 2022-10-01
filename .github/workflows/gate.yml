@@ -1,9 +1,11 @@
-name: Build and Test (windows-latest)
+name: CI
 
 on:
   push:
+    paths-ignore: [ '**.md' ]
     branches: [ main ]
   pull_request:
+    paths-ignore: [ '**.md' ]
     branches: [ main ]
 
 jobs:
@@ -22,7 +24,7 @@ jobs:
     - name: Build
       run: dotnet build src --configuration Release --no-restore
     - name: Test
-      run: dotnet test src --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
+      run: dotnet test src --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov --logger "trx;LogFileName=results.trx"
     - name: Publish NuGet artifacts
       uses: actions/upload-artifact@v3
       with:
@@ -33,3 +35,12 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} 
         path-to-lcov: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/coverage.info 
+    - name: Generate test report
+      uses: phoenix-actions/test-reporting@v8
+      id: unit-test-report
+      if: success() || failure() 
+      with:
+        name: test results
+        path: src/BitFaster.Caching.DependencyInjection.UnitTests/TestResults/results.trx
+        reporter: dotnet-trx 
+        only-summary: 'true'
