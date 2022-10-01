@@ -1,6 +1,11 @@
 # BitFaster.Caching.DependencyInjection
 Extension methods for setting up [caches](https://github.com/bitfaster/BitFaster.Caching/wiki/Caches) using [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/).
 
+[![NuGet version](https://badge.fury.io/nu/BitFaster.Caching.DependencyInjection.svg)](https://badge.fury.io/nu/BitFaster.Caching.DependencyInjection)
+![Nuget](https://img.shields.io/nuget/dt/BitFaster.Caching.DependencyInjection)
+![.NET Core](https://github.com/bitfaster/BitFaster.Caching.DependencyInjection/actions/workflows/gate.yml/badge.svg?main)
+[![Coverage Status](https://coveralls.io/repos/github/bitfaster/BitFaster.Caching.DependencyInjection/badge.svg?branch=main)](https://coveralls.io/github/bitfaster/BitFaster.Caching.DependencyInjection?branch=main)
+
 # ConcurrentLru
 
 To use with an `IServiceCollection` instance at startup:
